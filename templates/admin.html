@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin | Spice Garden</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<header class="navbar">
+    <a href="/" class="logo">🌿 Spice Garden</a>
+    <nav>
+        <a href="/">Home Page</a>
+        <a href="/admin">Reservations</a>
+    </nav>
+</header>
+
+<main class="section admin">
+    <p class="eyebrow">RESTAURANT MANAGEMENT</p>
+    <h1>Customer Reservations</h1>
+    <p>View all table bookings submitted by your customers.</p>
+
+    {% if reservations %}
+    <div class="table-wrap">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Customer</th>
+                    <th>Phone</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Guests</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for r in reservations %}
+                <tr>
+                    <td>{{ r['id'] }}</td>
+                    <td>{{ r['name'] }}</td>
+                    <td>{{ r['phone'] }}</td>
+                    <td>{{ r['date'] }}</td>
+                    <td>{{ r['time'] }}</td>
+                    <td>{{ r['guests'] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% else %}
+    <div class="empty">
+        <h2>No reservations yet</h2>
+        <p>Customer bookings will appear here after they submit
+           the reservation form.</p>
+        <a href="/#reservation" class="button">Make a Test Booking</a>
+    </div>
+    {% endif %}
+
+    <p><a href="/">← Back to Home Page</a></p>
+</main>
+
+<footer>
+    <p>© 2026 Spice Garden Restaurant</p>
+</footer>
+
+</body>
+</html>

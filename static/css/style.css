@@ -1,0 +1,446 @@
+/* ==========================
+   SPICE GARDEN RESTAURANT
+   COMPLETE WEBSITE CSS
+========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #29251f;
+    background: #fffaf2;
+    line-height: 1.7;
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    transition: 0.3s ease;
+}
+
+/* ==========================
+   NAVIGATION BAR
+========================== */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 18px 7%;
+    background: #173b2b;
+    color: white;
+    flex-wrap: wrap;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    color: #f5d58a;
+    text-decoration: none;
+}
+
+nav {
+    display: flex;
+    gap: 22px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+nav a:hover {
+    color: #f5d58a;
+}
+
+.nav-button,
+.button {
+    display: inline-block;
+    background: #c58b38;
+    color: white;
+    text-decoration: none;
+    padding: 12px 23px;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.nav-button:hover,
+.button:hover {
+    background: #a76f25;
+    transform: translateY(-2px);
+}
+
+/* ==========================
+   HOME PAGE HERO
+========================== */
+
+.hero {
+    min-height: 580px;
+    display: flex;
+    align-items: center;
+    padding: 80px 10%;
+    color: white;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(14, 35, 24, 0.93),
+            rgba(14, 35, 24, 0.38)
+        ),
+        url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1800&q=85")
+        center / cover no-repeat;
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.eyebrow {
+    color: #c58b38;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 14px;
+}
+
+.hero h1 {
+    font-family: Georgia, serif;
+    font-size: clamp(42px, 6vw, 72px);
+    line-height: 1.15;
+    margin-bottom: 22px;
+}
+
+.hero-content > p:not(.eyebrow) {
+    font-size: 18px;
+    margin-bottom: 30px;
+    max-width: 550px;
+}
+
+.hero .button {
+    padding: 15px 28px;
+}
+
+/* ==========================
+   COMMON SECTIONS
+========================== */
+
+.section {
+    padding: 75px 8%;
+    text-align: center;
+}
+
+.section h2 {
+    font-family: Georgia, serif;
+    font-size: clamp(29px, 4vw, 40px);
+    line-height: 1.3;
+    margin-bottom: 18px;
+    color: #243528;
+}
+
+.about {
+    background: #fffaf2;
+}
+
+.about > p:last-child {
+    max-width: 680px;
+    margin: 0 auto;
+    color: #71695e;
+    font-size: 17px;
+}
+
+/* ==========================
+   MENU SECTION
+========================== */
+
+.menu {
+    background: #f3eadb;
+}
+
+.menu-intro {
+    max-width: 650px;
+    margin: 10px auto 30px;
+    color: #71695e;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 28px;
+    margin-top: 35px;
+    text-align: left;
+}
+
+.dish {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.09);
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.dish:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.14);
+}
+
+.dish img {
+    display: block;
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+}
+
+.dish-info {
+    padding: 22px;
+}
+
+.dish h3 {
+    color: #173b2b;
+    font-size: 21px;
+    margin-bottom: 8px;
+}
+
+.dish p {
+    color: #71695e;
+    font-size: 15px;
+}
+
+/* ==========================
+   RESERVATION SECTION
+========================== */
+
+.reservation {
+    background: #fffaf2;
+}
+
+.reservation > p:not(.eyebrow) {
+    color: #71695e;
+}
+
+.reservation form {
+    max-width: 520px;
+    margin: 30px auto 0;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-align: left;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.reservation input,
+.reservation select,
+.reservation textarea {
+    width: 100%;
+    padding: 13px 14px;
+    border: 1px solid #d6cbbb;
+    border-radius: 6px;
+    background: #fffdf9;
+    font-family: inherit;
+    font-size: 15px;
+}
+
+.reservation input:focus,
+.reservation select:focus,
+.reservation textarea:focus {
+    outline: 2px solid #c58b38;
+    border-color: #c58b38;
+}
+
+.reservation label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #243528;
+}
+
+.reservation button {
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* ==========================
+   ADMIN PAGE
+========================== */
+
+.admin {
+    min-height: 70vh;
+}
+
+.admin h1 {
+    color: #243528;
+    font-family: Georgia, serif;
+    font-size: 36px;
+    margin-bottom: 12px;
+}
+
+.table-wrap {
+    width: 100%;
+    overflow-x: auto;
+    margin: 30px auto;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+th,
+td {
+    padding: 15px;
+    border-bottom: 1px solid #e4dccf;
+    text-align: left;
+    white-space: nowrap;
+}
+
+th {
+    background: #173b2b;
+    color: white;
+}
+
+tbody tr:hover {
+    background: #fff6e8;
+}
+
+.empty {
+    max-width: 650px;
+    margin: 35px auto;
+    padding: 40px 25px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+}
+
+.empty h2 {
+    color: #173b2b;
+}
+
+.empty p {
+    margin: 12px 0 25px;
+    color: #71695e;
+}
+
+/* ==========================
+   FOOTER
+========================== */
+
+footer {
+    background: #173b2b;
+    color: white;
+    text-align: center;
+    padding: 32px 20px;
+}
+
+footer h3 {
+    color: #f5d58a;
+    font-size: 23px;
+    margin-bottom: 8px;
+}
+
+footer p {
+    margin: 6px 0;
+    font-size: 14px;
+}
+
+footer a {
+    color: #f5d58a;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* ==========================
+   RESPONSIVE DESIGN
+========================== */
+
+@media (max-width: 900px) {
+    .navbar {
+        padding: 18px 5%;
+    }
+
+    .menu-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+    .hero {
+        padding: 70px 7%;
+    }
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav {
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .hero {
+        min-height: 470px;
+        padding: 55px 7%;
+        background-position: center;
+    }
+
+    .hero h1 {
+        font-size: 43px;
+    }
+
+    .hero-content > p:not(.eyebrow) {
+        font-size: 16px;
+    }
+
+    .section {
+        padding: 55px 6%;
+    }
+
+    .menu-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .dish img {
+        height: 230px;
+    }
+
+    .reservation form {
+        padding: 22px;
+    }
+
+    .admin h1 {
+        font-size: 29px;
+    }
+
+    th,
+    td {
+        padding: 11px;
+    }
+}
