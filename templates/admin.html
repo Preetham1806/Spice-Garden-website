@@ -21,6 +21,10 @@
     <h1>Customer Reservations</h1>
     <p>View all table bookings submitted by your customers.</p>
 
+    <form action="{{ url_for('admin_logout') }}" method="POST">
+    <button type="submit">Logout</button>
+</form>
+
     {% if reservations %}
     <div class="table-wrap">
         <table>
@@ -32,6 +36,7 @@
                     <th>Date</th>
                     <th>Time</th>
                     <th>Guests</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -43,7 +48,14 @@
                     <td>{{ r['date'] }}</td>
                     <td>{{ r['time'] }}</td>
                     <td>{{ r['guests'] }}</td>
-
+                    <td>
+    <form action="{{ url_for('delete_reservation', reservation_id=r['id']) }}"
+          method="POST"
+          onsubmit="return confirm('Are you sure you want to delete this reservation?');">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+        <button type="submit">Delete</button>
+    </form>
+</td>
                 </tr>
                 {% endfor %}
             </tbody>
@@ -56,6 +68,17 @@
            the reservation form.</p>
         <a href="/#reservation" class="button">Make a Test Booking</a>
     </div>
+    {% endif %}
+
+    <p><a href="/">← Back to Home Page</a></p>
+</main>
+
+<footer>
+    <p>© 2026 Spice Garden Restaurant</p>
+</footer>
+
+</body>
+</html>
     {% endif %}
 
     <p><a href="/">← Back to Home Page</a></p>
